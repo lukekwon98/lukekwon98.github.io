@@ -49,7 +49,7 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Archive
+  - title:             Example
     url:               /example/
   - title:             Documentation
     url:               /docs/
@@ -74,7 +74,7 @@ permalink:             /:categories/:year-:month-:day-:title/
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
-paginate_path:         /:num/
+paginate_path:         /:num/ 
 
 
 # Theme
