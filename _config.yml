@@ -50,7 +50,7 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             Archive
-    url:               /archive/
+    url:               /example/
   - title:             Documentation
     url:               /docs/
   - title:             About
