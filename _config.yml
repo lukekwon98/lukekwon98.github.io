@@ -51,12 +51,12 @@ author:
 menu:
   - title:             Example
     url:               /example/
-  - title:             Documentation
+  - title:             Portfolio
     url:               /docs/
   - title:             About
     url:               /about/
-  - title:             Check
-    url:               /check/
+  - title:             Resume
+    url:               /Resume/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
@@ -362,10 +362,10 @@ plugins:
 #   admins:              <id>
 
 # Used on index and about sites
-# social:
-#   name:                <firstname> <lastname>
-#   links:
-#     - https://github.com/<lukekwon98>
+social:
+  name:                <Luke> <Kwon>
+  links:
+    - https://github.com/<lukekwon98>
 
 
 # Plugin Configs
