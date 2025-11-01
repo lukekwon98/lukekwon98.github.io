@@ -212,7 +212,7 @@ keybase:
   icon: icon-key
   prepend: "https://keybase.io/"
 download:
-  name: Download
+  name: Resume
   icon: icon-box-add
 signal:
   name: Signal

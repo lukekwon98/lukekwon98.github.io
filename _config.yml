@@ -25,8 +25,7 @@ title:                 Luke Kwon
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Hydejack is a boutique Jekyll theme for hackers, nerds, and academics,
-  with a focus on personal sites that are meant to impress.
+  Computer Graphics Software Engineering Portfolio Website for HyukChe (Luke) Kwon
 
 # A shorter description for the sidebar.
 tagline:               GIMME JOB
@@ -362,10 +361,10 @@ plugins:
 #   admins:              <id>
 
 # Used on index and about sites
-social:
-  name:                Luke Kwon
-  links:
-    - https://github.com/lukekwon98
+# social:
+#   name:                Luke Kwon
+#   links:
+#     - https://github.com/lukekwon98
 
 
 # Plugin Configs
