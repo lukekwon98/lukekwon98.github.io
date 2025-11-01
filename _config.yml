@@ -363,7 +363,7 @@ plugins:
 
 # Used on index and about sites
 social:
-  name:                <Luke> <Kwon>
+  name:                Luke Kwon
   links:
     - https://github.com/lukekwon98
 
