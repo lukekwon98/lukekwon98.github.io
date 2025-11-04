@@ -1,9 +1,9 @@
 ---
 layout: page
-title: project 7
+title: Curve Editor
 description: with background image
-img: assets/img/4.jpg
-importance: 1
+img: assets/img/Curve Editor2.png
+importance: 8
 category: work
 related_publications: true
 ---
