@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 5
+title: 2D Ball Collision Simulation
 description: a project with a background image
-img: assets/img/1.jpg
-importance: 3
-category: fun
+img: assets/img/Ball Collisions2.png
+importance: 12
+category: work
 ---
 
 Every project has a beautiful feature showcase page.

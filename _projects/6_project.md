@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
-img:
-importance: 4
-category: fun
+title: Modeling
+description: Simple 3D Modeling Projects
+img: assets/img/MainRender2.jpg
+importance: 13
+category: work
 ---
 
 Every project has a beautiful feature showcase page.

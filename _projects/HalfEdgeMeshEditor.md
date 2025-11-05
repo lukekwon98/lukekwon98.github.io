@@ -2,7 +2,7 @@
 layout: page
 title: Half-Edge Mesh Editor
 description: with background image
-img: assets/img/Catmull Clark Subdivision.png
+img: assets/img/Catmull Clark Subdivision2.png
 importance: 1
 category: work
 related_publications: true

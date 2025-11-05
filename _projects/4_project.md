@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 4
+title: CPU Rasterizer
 description: another without an image
-img:
+img: assets/img/RatserizerAAToon.png
 importance: 3
-category: fun
+category: work
 ---
 
 Every project has a beautiful feature showcase page.

@@ -4,7 +4,7 @@ title: Scene Graph
 description: a project that redirects to another website
 img: assets/img/scenegraph.png
 # redirect: https://unsplash.com
-importance: 3
+importance: 11
 category: work
 ---
 
