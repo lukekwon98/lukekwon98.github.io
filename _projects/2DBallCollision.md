@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 2D Ball Collision Simulation
-description: Conservation of Momentum, Convservation of Kinetic Energy, Vector Projections
+title: Ball Collision Simulation
+description: "Conservation of Momentum, Convservation of Kinetic Energy, Vector Projections <span style='display:block; margin-top:0.5em;'></span><b>Python, Pygame, Numpy</b>"
 img: assets/img/BC_2.gif
 importance: 12
 category: work

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: OpenGL Renderer
-description: Surface Shaders, Post-Process Shaders, Worley Noise, Perlin Noise
+description: "Surface Shaders, Post-Process Shaders, Worley Noise, Perlin Noise <span style='display:block; margin-top:0.5em;'></span><b>C++, GLSL, QT</b>"
 img: assets/img/GL_2.gif
 importance: 2
 category: work

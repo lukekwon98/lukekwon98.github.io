@@ -1,9 +1,8 @@
 ---
 layout: page
 title: Half-Edge Mesh Editor
-description: Half-Edges, Face Triangulation, Catmull-Clark Subdivision
+description: "Half-Edges, Face Triangulation, Catmull-Clark Subdivision <span style='display:block; margin-top:0.5em;'></span><b>C++, OpenGL, QT</b>"
 img: assets/img/HE_7.gif
-tags: [C++, QT]
 importance: 1
 category: work
 related_publications: true
@@ -29,7 +28,7 @@ Half-edges are a useful way of representing mesh data, since they provide topoli
     </div>
 </div>
 <div class="caption">
-    Traversing through the mesh with half-edges
+    Traversing through a complicated mesh with half-edges
 </div>
 
 Given adjacency information, we can now easily add or modify elements of the mesh.
