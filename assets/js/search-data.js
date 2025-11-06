@@ -402,51 +402,51 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-2d-ball-collision-simulation",
-          title: '2D Ball Collision Simulation',
-          description: "Conservation of Momentum, Convservation of Kinetic Energy, Vector Projections",
+          section: "News",},{id: "projects-ball-collision-simulation",
+          title: 'Ball Collision Simulation',
+          description: "Conservation of Momentum, Convservation of Kinetic Energy, Vector Projections Python, Pygame, Numpy",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2DBallCollision/";
-            },},{id: "projects-scene-graph",
-          title: 'Scene Graph',
-          description: "a project that redirects to another website",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-cpu-rasterizer",
-          title: 'CPU Rasterizer',
-          description: "another without an image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-modeling",
-          title: 'Modeling',
-          description: "Simple 3D Modeling Projects",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-curve-editor",
-          title: 'Curve Editor',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-fkik",
-          title: 'FKIK',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
             },},{id: "projects-project-9",
           title: 'project 9',
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-cpu-rasterizer",
+          title: 'CPU Rasterizer',
+          description: "Rasterization, Z-Buffering, Anti-Aliasing, Bresenham&#39;s Algorithm C++, GLM, QT",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/CPURasterizer/";
+            },},{id: "projects-curve-editor",
+          title: 'Curve Editor',
+          description: "with background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/CurveEditor/";
+            },},{id: "projects-fkik",
+          title: 'FKIK',
+          description: "Foward Kinematics, Inverse Kinematics, LimbIK, CCD, FootIK C++, Unity",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/FKIK/";
             },},{id: "projects-half-edge-mesh-editor",
           title: 'Half-Edge Mesh Editor',
-          description: "Half-Edges, Face Triangulation, Catmull-Clark Subdivision",
+          description: "Half-Edges, Face Triangulation, Catmull-Clark Subdivision C++, OpenGL, QT",
           section: "Projects",handler: () => {
               window.location.href = "/projects/HalfEdgeMeshEditor/";
+            },},{id: "projects-modeling",
+          title: 'Modeling',
+          description: "Simple 3D Modeling Projects Maya, Blender, Substance Shader",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Modeling/";
             },},{id: "projects-opengl-renderer",
           title: 'OpenGL Renderer',
-          description: "Surface Shaders, Post-Process Shaders, Worley Noise, Perlin Noise",
+          description: "Surface Shaders, Post-Process Shaders, Worley Noise, Perlin Noise C++, GLSL, QT",
           section: "Projects",handler: () => {
               window.location.href = "/projects/OpenGLRenderer/";
+            },},{id: "projects-scene-graph",
+          title: 'Scene Graph',
+          description: "a project that redirects to another website",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/SceneGraph/";
             },},{
         id: 'social-linkedin',
         title: 'LinkedIn',
