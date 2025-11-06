@@ -402,11 +402,11 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-opengl-renderer",
-          title: 'OpenGL Renderer',
-          description: "a project with a background image and giscus comments",
+          section: "News",},{id: "projects-2d-ball-collision-simulation",
+          title: '2D Ball Collision Simulation',
+          description: "Conservation of Momentum, Convservation of Kinetic Energy, Vector Projections",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
+              window.location.href = "/projects/2DBallCollision/";
             },},{id: "projects-scene-graph",
           title: 'Scene Graph',
           description: "a project that redirects to another website",
@@ -417,11 +417,6 @@ ninja.data = [{
           description: "another without an image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-2d-ball-collision-simulation",
-          title: '2D Ball Collision Simulation',
-          description: "a project with a background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
             },},{id: "projects-modeling",
           title: 'Modeling',
           description: "Simple 3D Modeling Projects",
@@ -444,9 +439,14 @@ ninja.data = [{
               window.location.href = "/projects/9_project/";
             },},{id: "projects-half-edge-mesh-editor",
           title: 'Half-Edge Mesh Editor',
-          description: "with background image",
+          description: "Half-Edges, Face Triangulation, Catmull-Clark Subdivision",
           section: "Projects",handler: () => {
               window.location.href = "/projects/HalfEdgeMeshEditor/";
+            },},{id: "projects-opengl-renderer",
+          title: 'OpenGL Renderer',
+          description: "Surface Shaders, Post-Process Shaders, Worley Noise, Perlin Noise",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/OpenGLRenderer/";
             },},{
         id: 'social-linkedin',
         title: 'LinkedIn',
