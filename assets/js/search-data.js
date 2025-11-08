@@ -444,7 +444,7 @@ ninja.data = [{
               window.location.href = "/projects/OpenGLShaders/";
             },},{id: "projects-scene-graph",
           title: 'Scene Graph',
-          description: "a project that redirects to another website",
+          description: "Creating a simple scene with scene graphs C++, QT",
           section: "Projects",handler: () => {
               window.location.href = "/projects/SceneGraph/";
             },},{
