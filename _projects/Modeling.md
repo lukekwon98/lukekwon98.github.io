@@ -29,7 +29,7 @@ Inspired by the eastern folktale "The Herdsman and the Weaver"
     </div>
 </div>
 
-Modeling of an old cup
+Modeling of a cup I saw at the Penn Museum
 
 {% include video.liquid
     path="https://www.youtube.com/embed/Go26rH4L1mI?si=efEXJ53-zcbP_QwS"
@@ -40,7 +40,7 @@ Modeling of an old cup
     autoplay=false
     loop=true
     muted=true
-    caption="A short demo video rendered in Blender"
+    caption=""
 %}
 
 ### Blender
@@ -56,12 +56,9 @@ My implementation of the donut tutorial by Blender Guru
     autoplay=false
     loop=true
     muted=true
-    caption="A short demo video rendered in Blender"
+    caption="Modeling Scene"
 %}
 
-<div class="caption">
-    Modeling Scene
-</div>
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/Donut1.gif" title="example image" class="img-fluid rounded z-depth-1" %}

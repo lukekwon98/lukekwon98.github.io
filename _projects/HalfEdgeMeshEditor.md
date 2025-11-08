@@ -5,7 +5,7 @@ description: "Half-Edges, Face Triangulation, Catmull-Clark Subdivision <span st
 img: assets/img/HE_7.gif
 importance: 1
 category: work
-related_publications: true
+related_publications: false
 ---
 
 In this project, I created and displayed mesh objects using half-edges to represent data read from .obj files. I also included features such as edge splitting, triangulation, and Catmull-Clark subdivison.
