@@ -437,11 +437,11 @@ ninja.data = [{
           description: "Simple 3D Modeling Projects Maya, Blender, Substance Shader",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Modeling/";
-            },},{id: "projects-opengl-renderer",
-          title: 'OpenGL Renderer',
+            },},{id: "projects-opengl-shaders",
+          title: 'OpenGL Shaders',
           description: "Surface Shaders, Post-Process Shaders, Worley Noise, Perlin Noise C++, GLSL, QT",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/OpenGLRenderer/";
+              window.location.href = "/projects/OpenGLShaders/";
             },},{id: "projects-scene-graph",
           title: 'Scene Graph',
           description: "a project that redirects to another website",
