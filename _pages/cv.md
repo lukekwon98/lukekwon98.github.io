@@ -4,7 +4,7 @@ permalink: /Resume/
 title: Resume
 nav: true
 nav_order: 5
-cv_pdf: LukeKwon_Resume.pdf # you can also use external links here
+cv_pdf: HyukCheKwon_Resume.pdf # you can also use external links here
 description:
 # toc:
 #   sidebar: left
