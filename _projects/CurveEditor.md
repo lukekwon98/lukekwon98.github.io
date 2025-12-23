@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Curve Editor
-description: with background image
+description: De Casteljau, Catmull-Rom, Hermite
 img: assets/img/Curve Editor2.png
 importance: 8
 category: work
