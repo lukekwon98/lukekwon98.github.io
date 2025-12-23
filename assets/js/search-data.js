@@ -419,7 +419,7 @@ ninja.data = [{
               window.location.href = "/projects/CPURasterizer/";
             },},{id: "projects-curve-editor",
           title: 'Curve Editor',
-          description: "with background image",
+          description: "De Casteljau, Catmull-Rom, Hermite",
           section: "Projects",handler: () => {
               window.location.href = "/projects/CurveEditor/";
             },},{id: "projects-fkik",
@@ -434,7 +434,7 @@ ninja.data = [{
               window.location.href = "/projects/HalfEdgeMeshEditor/";
             },},{id: "projects-modeling",
           title: 'Modeling',
-          description: "Simple 3D Modeling Projects Maya, Blender, Substance Shader",
+          description: "Simple 3D Modeling Projects Maya, Blender, Houdini, Substance Shader",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Modeling/";
             },},{id: "projects-opengl-shaders",
