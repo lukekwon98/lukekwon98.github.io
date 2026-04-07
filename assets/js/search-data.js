@@ -437,11 +437,21 @@ ninja.data = [{
           description: "Simple 3D Modeling Projects Maya, Blender, Houdini, Substance Shader",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Modeling/";
+            },},{id: "projects-monte-carlo-path-tracer",
+          title: 'Monte Carlo Path Tracer',
+          description: "Path Tracing, BRDFs, PDFs C++, GLM, QT",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/MonteCarloPathTracer/";
             },},{id: "projects-opengl-shaders",
           title: 'OpenGL Shaders',
           description: "Surface Shaders, Post-Process Shaders, Worley Noise, Perlin Noise C++, GLSL, QT",
           section: "Projects",handler: () => {
               window.location.href = "/projects/OpenGLShaders/";
+            },},{id: "projects-space-minecraft",
+          title: 'Space Minecraft',
+          description: "Ray Marching Collisions, Post-processing, Perlin Noise, Proceduarl Generation C++, GLM, QT",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Planet%20Minecraft/";
             },},{id: "projects-scene-graph",
           title: 'Scene Graph',
           description: "Creating a simple scene with scene graphs C++, QT",
