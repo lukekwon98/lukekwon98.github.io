@@ -83,7 +83,7 @@ The skybox is rendered in the lighting pass of the deferred rendering pipeline w
     </div>
 </div>
 
-Stars are generated with 3D Worley noise sampled at high frequency. When the noise value falls below a threshold, a star is drawn. A second Worley noise pass at a different frequency controls intensity — some stars are given HDR brightness values (25× base intensity) to create a bloom-like effect.
+Stars are generated with 3D Worley noise sampled at high frequency. When the noise value falls below a threshold, a star is drawn.
 
 Nebulae are generated with 3D Perlin FBM, masked by a separate Perlin noise passed through smoothstep to give them defined edges. The nebula is animated by slowly offsetting the noise sampling position over time. A purple-to-black color gradient is applied.
 
