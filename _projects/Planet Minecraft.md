@@ -32,9 +32,15 @@ I was responsible for the post-processing pipeline, player collision detection o
 
 In flat Minecraft, collision detection uses grid marching — stepping along axis-aligned grid cells. On a sphere, blocks don't sit on an axis-aligned grid, so this approach doesn't work.
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Minecraft_Collision.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
 I replaced grid marching with ray marching, stepping along the ray in small fixed increments and checking block occupancy at each step. The key adaptations for the spherical environment:
 
-- The player's velocity is decomposed into **local axes** (surface-relative forward, right, up).
+- The player's velocity is decomposed into local axes (surface-relative forward, right, up).
 - The bounding box is constructed perpendicular to the planet surface using the player's local coordinate frame.
 - The surface normal is updated every tick based on the player-to-planet-center vector.
 - Horizontal mouse rotation uses the current surface normal as the rotation axis, not the global up vector.
@@ -82,5 +88,6 @@ Stars are generated with 3D Worley noise sampled at high frequency. When the noi
 Nebulae are generated with 3D Perlin FBM, masked by a separate Perlin noise passed through smoothstep to give them defined edges. The nebula is animated by slowly offsetting the noise sampling position over time. A purple-to-black color gradient is applied.
 
 Reference: 
+CIS 5600 MIS - Adam Mally CIS 5600 Game Engine Paradigms - Adam Mally
 https://www.bowerbyte.com/posts/blocky-planet/
 https://dev.thi.ng/gradients/

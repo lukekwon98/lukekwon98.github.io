@@ -166,5 +166,5 @@ Dielectric(Glass): Uses the Fresnel reflectance coefficient to probabilistically
 
 
 Slide images from: 
-CIS 5600 MIS - Adam Mally
-CIS 5600 Path Tracing Basics - Adam Mally
+CIS 5610 MIS - Adam Mally
+CIS 5610 Path Tracing Basics - Adam Mally
