@@ -422,6 +422,11 @@ ninja.data = [{
           description: "De Casteljau, Catmull-Rom, Hermite",
           section: "Projects",handler: () => {
               window.location.href = "/projects/CurveEditor/";
+            },},{id: "projects-deferred-renderer-with-ssr",
+          title: 'Deferred Renderer with SSR',
+          description: "Deferred Rendering, Screen Space Reflections, OpenGL C++, GLM, QT",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/DeferredRendererSSR/";
             },},{id: "projects-fkik",
           title: 'FKIK',
           description: "Foward Kinematics, Inverse Kinematics, LimbIK, CCD, FootIK C++, Unity",
