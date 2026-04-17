@@ -3,7 +3,7 @@ layout: page
 title: Space Minecraft
 description: "Ray Marching Collisions, Post-processing, Perlin Noise, Proceduarl Generation <span style='display:block; margin-top:0.5em;'></span><b>C++, GLM, QT</b>"
 img: assets/img/MinecraftCover.png
-importance: 3
+importance: 4
 category: work
 ---
 

@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Deferred Renderer with SSR
-description: "Deferred Rendering, Screen Space Reflections, OpenGL <span style='display:block; margin-top:0.5em;'></span><b>C++, GLM, QT</b>"
-img: assets/img/PathTracerCover.png
-importance: 15
+description: "Deferred Rendering, Screen Space Reflections, OpenGL <span style='display:block; margin-top:0.5em;'></span><b>C++, OpenGL, Nsight Graphics</b>"
+img: assets/img/Deferred_Pos.png
+importance: 1
 category: work
 ---
 
@@ -86,7 +86,8 @@ For each fragment, I reflect the view direction around the surface normal to get
 
 So basically we start off in world space by sampling the world space coordinates via the position gBuffer
 
-**World Space** -> compute wi by reflecting wo from normal -> compute start and end of ray march in world using max_distance -> convert start and end position to **Pixel Space** (but store view space z coordinate of ray start and end) -> start marching along the pixel space -> for each march, use t to compute perspective correct interpolation to get the z coordinate in view space -> sample and compute view position of geometry located in the current pixel and compare with current ray's z coordinate -> if the current ray's z coordinate is smaller than the geometry's z coordinate, geometry detected, sample color using uv of current ray's pixel location -> store in texture, with blended alpha values depending on position
+**World Space** -> compute wi by reflecting wo from normal -> compute start and end of ray march in world using max_distance -> convert start and end position to **Pixel Space** (but store view space z coordinate of ray start and end) -> start marching along the pixel space -> for each march, use t to compute perspective correct interpolation to get the z coordinate in view space -> sample and compute **View Space** position of geometry located in the current pixel and compare with current ray's z coordinate -> if the current ray's z coordinate is smaller than the geometry's z coordinate, geome"
+try detected, sample color using uv of current ray's pixel location -> store in texture, with blended alpha values depending on position
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">

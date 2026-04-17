@@ -3,7 +3,7 @@ layout: page
 title: Monte Carlo Path Tracer
 description: "Path Tracing, BRDFs, PDFs <span style='display:block; margin-top:0.5em;'></span><b>C++, GLM, QT</b>"
 img: assets/img/PathTracerCover.png
-importance: 3
+importance: 2
 category: work
 ---
 

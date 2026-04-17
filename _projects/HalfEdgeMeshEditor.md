@@ -3,7 +3,7 @@ layout: page
 title: Half-Edge Mesh Editor
 description: "Half-Edges, Face Triangulation, Catmull-Clark Subdivision <span style='display:block; margin-top:0.5em;'></span><b>C++, OpenGL, QT</b>"
 img: assets/img/HE_7.gif
-importance: 1
+importance: 5
 category: work
 related_publications: false
 ---
