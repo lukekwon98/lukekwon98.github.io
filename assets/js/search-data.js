@@ -424,7 +424,7 @@ ninja.data = [{
               window.location.href = "/projects/CurveEditor/";
             },},{id: "projects-deferred-renderer-with-ssr",
           title: 'Deferred Renderer with SSR',
-          description: "Deferred Rendering, Screen Space Reflections, OpenGL C++, GLM, QT",
+          description: "Deferred Rendering, Screen Space Reflections, OpenGL C++, OpenGL, Nsight Graphics",
           section: "Projects",handler: () => {
               window.location.href = "/projects/DeferredRendererSSR/";
             },},{id: "projects-fkik",
