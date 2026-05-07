@@ -81,7 +81,7 @@ I could not figure out what was causing the issue, until I hooked the program up
 
 I was expecting x4 vec3s to be processed in the vertex shader of the post-processing pipeline, but RenderDoc was showing x3 vec4s instead.
 
-It turns out the GLSL vertex shader was expecting 'in vec4's, and I was buffering 
+It turns out the GLSL vertex shader was expecting vec4, but I was buffering vec3s
 
 Note that glVertexAttribPointer expects size 4
 ```C++
