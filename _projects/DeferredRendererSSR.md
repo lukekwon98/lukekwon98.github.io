@@ -113,7 +113,7 @@ Because lighting now runs per *visible* pixel instead of per *rasterized* fragme
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/ForwardRender1.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/IBL_Center.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
@@ -138,7 +138,7 @@ Since we assume that all points lie in the center of the environment map, we can
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/IBL_Diffuse_Explanation.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/IBL_DiffuseExplanation.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
