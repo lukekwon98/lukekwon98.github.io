@@ -38,7 +38,6 @@ The G-Buffer layout I used stores:
 - **World-space normal** — used to compute reflection directions and lighting
 - **Albedo** — base surface color
 - **Metallic / Roughness / Mask** — packed into a single RGBA texture. The mask channel flags whether a pixel contains geometry at all, so downstream passes can early-out on empty background pixels
-- **PBR** — the fully shaded color from the environment map (via split-sum IBL), pre-computed here so the SSR pass can read reflected color directly at ray-hit points
 
 <div class="row justify-content-sm-center">
     <div class="col-sm mt-3 mt-md-0">
@@ -68,9 +67,159 @@ Because all of these are written in a single pass, the vertex shader only runs o
 
 ## Lighting Pass
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/PBR.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
 The second pass draws a single full-screen quad. The fragment shader runs once per screen pixel, samples the G-Buffer textures at the current fragment's UV, reconstructs the surface properties, and computes lighting.
 
 Because lighting now runs per *visible* pixel instead of per *rasterized* fragment, overdraw stops being a shading problem — it's only a bandwidth problem for the G-Buffer writes. Adding more lights also becomes cheap, since each additional light is just another loop iteration inside the same full-screen pass.
+
+1000 lights, 8 non-overlapping geometry
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/1000SimpleForward1.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/1000SimpleDeferred1.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+1000 lights, 125 overlapping geometry
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/TestScene.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/DeferredRender1.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ForwardRender1.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+## Image-based Lighting (Environment Maps)
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ForwardRender1.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+Environment maps are considered to be infinitely far away, so every fragment in the scene is assumed that it's placed exactly in the center of the map. This assumption simplifies light computation in various ways. As our shader model, we will be using the cook-torrance model that was implemented in Epic Games' Unreal 4 Engine, and is used as the general 'standard' PBR shader in contemporary real-time applications.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Cook-Torrance.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Cook-Torrance2.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+### Diffuse Convolution
+The main difference between light sources with finite areas such as point lights or area lights and environment maps is that for environment maps, lights come in from all directions.
+
+Since we assume that all points lie in the center of the environment map, we can assume that the same amount of radiance is coming into the pixel in all directions. 
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/IBL_Diffuse_Explanation.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/IBL_DiffusePrecompute.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+This means that as long as fragments are facing the same direction toward the environment map (same surface normal), the amount of light that they receive from the environment map is the same. Therefore, we can precompute how light reaches for every surface normal save it into a cubemap.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/IBL_DiffuseMap.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+### Glossy(Specular) Convolution
+
+Precomputing the specular convolution map is a little trickier.
+First, we have to split the integral to as below.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/IBL_Split.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+The first part can be precomputed by random sampling near the surface's normal along it's brdf. However, the lower the pdf, we sample from higher mip maps to prevent unexpected high valued colors from producing fireflies.
+
+The other part of the equation has us precompute the Fresnel coefficient of the Cook-Torrance microfacet BRDF.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/IBL_Glossy1.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/IBL_Glossy2.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/IBL_Glossy3.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+Note that the Cook-Torrance BRDF's DGF term is being divided by F, leaving only DG in the integrand. We've effectively rearranged the equation from the Fresnel term's point of view — pulling F₀ outside the integral so what remains depends only on the viewing angle (N·V) and roughness. We can precompute these integral values using Monte Carlo estimation because the result no longer depends on the material's base reflectance F₀ or the environment map — meaning a single 2D lookup table works for any material under any lighting.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/IBL_LUT.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+The x-axis represents how tanget wo is to the susrface, and the y axis represents roughness. The red channel represents the Fresnel term's scale, and the Green channel represents its bias.
+
+Here are the performance comparisons for precomputed IBL and live IBL
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/IBLLive.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/IBLPrecompute.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+Note that the precomputed IBL computed 4096 samples for convolution, while live IBL computed 32.
+
+Should live IBL precompute 32, the program gets so slow it becomes unusable.
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/IBL_4096samples.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
 
 ## Screen Space Reflections
 
@@ -109,3 +258,5 @@ References:
 UPenn CIS 5610 Deferred Rendering Course Notes - Adam Mally
 
 UPenn CIS 5610 Screen-Space Reflections Course Notes - Adam Mally 
+
+https://graphics.stanford.edu/papers/ravir_thesis/chapter4.pdf 
