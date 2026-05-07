@@ -412,6 +412,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-bvh-accelerated-ray-tracer",
+          title: 'BVH Accelerated Ray Tracer',
+          description: "Bounding Volume Hierarchy, Acceleration Structures C++, GLM, QT",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/BVHRayTracer/";
             },},{id: "projects-cpu-rasterizer",
           title: 'CPU Rasterizer',
           description: "Rasterization, Z-Buffering, Anti-Aliasing, Bresenham&#39;s Algorithm C++, GLM, QT",
