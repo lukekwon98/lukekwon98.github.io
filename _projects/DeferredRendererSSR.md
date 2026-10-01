@@ -111,11 +111,11 @@ Because lighting now runs per *visible* pixel instead of per *rasterized* fragme
 
 ## Image-based Lighting (Environment Maps)
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/IBL_Center.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/IBL_CenterX.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 Environment maps are considered to be infinitely far away, so every fragment in the scene is assumed that it's placed exactly in the center of the map. This assumption simplifies light computation in various ways. As our shader model, we will be using the cook-torrance model that was implemented in Epic Games' Unreal 4 Engine, and is used as the general 'standard' PBR shader in contemporary real-time applications.
 <!-- 
@@ -142,52 +142,52 @@ Since we assume that all points lie in the center of the environment map, we can
     </div>
 </div>
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/IBL_DiffusePrecompute.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/IBL_DiffusePrecomputeX.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 This means that as long as fragments are facing the same direction toward the environment map (same surface normal), the amount of light that they receive from the environment map is the same. Therefore, we can precompute how light reaches for every surface normal save it into a cubemap.
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/IBL_DiffuseMap.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/IBL_DiffuseMapX.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 ### Glossy(Specular) Convolution
 
 Precomputing the specular convolution map is a little trickier.
 First, we have to split the integral to as below.
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/IBL_Split.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/IBL_SplitX.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 The first part can be precomputed by random sampling near the surface's normal along it's brdf. However, the lower the pdf, we sample from higher mip maps to prevent unexpected high valued colors from producing fireflies.
 
 The other part of the equation has us precompute the Fresnel coefficient of the Cook-Torrance microfacet BRDF.
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/IBL_Glossy1.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/IBL_Glossy1X.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/IBL_Glossy2.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/IBL_Glossy2X.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/IBL_Glossy3.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/IBL_Glossy3X.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 Note that the Cook-Torrance BRDF's DGF term is being divided by F, leaving only DG in the integrand. We've effectively rearranged the equation from the Fresnel term's point of view — pulling F₀ outside the integral so what remains depends only on the viewing angle (N·V) and roughness. We can precompute these integral values using Monte Carlo estimation because the result no longer depends on the material's base reflectance F₀ or the environment map — meaning a single 2D lookup table works for any material under any lighting.
 
@@ -225,11 +225,11 @@ Should live IBL precompute 32, the program gets so slow it becomes unusable.
 
 With the G-Buffer already holding position, normal, and color for every visible pixel, SSR becomes tractable: we can trace reflection rays through screen space itself, using the depth buffer as a cheap proxy for scene geometry.
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Deferred_Reflect.png" title="SSR result" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Deferred_ReflectX.png" title="SSR result" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 For each fragment, I reflect the view direction around the surface normal to get a reflection ray, then march that ray in screen space. At each step, I compare the ray's depth to the G-Buffer depth at that screen position — if the ray has gone behind a surface, we've hit geometry, and the pixel color at the intersection becomes the reflected color.
 
@@ -238,11 +238,11 @@ So basically we start off in world space by sampling the world space coordinates
 **World Space** -> compute wi by reflecting wo from normal -> compute start and end of ray march in world using max_distance -> convert start and end position to **Pixel Space** (but store view space z coordinate of ray start and end) -> start marching along the pixel space -> for each march, use t to compute perspective correct interpolation to get the z coordinate in view space -> sample and compute **View Space** position of geometry located in the current pixel and compare with current ray's z coordinate -> if the current ray's z coordinate is smaller than the geometry's z coordinate, geome"
 try detected, sample color using uv of current ray's pixel location -> store in texture, with blended alpha values depending on position
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Deferred_PixelMarch.png" title="SSR result" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Deferred_PixelMarchX.png" title="SSR result" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 
 ## Result

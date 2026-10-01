@@ -32,11 +32,11 @@ I was responsible for the post-processing pipeline, player collision detection o
 
 In flat Minecraft, collision detection uses grid marching — stepping along axis-aligned grid cells. On a sphere, blocks don't sit on an axis-aligned grid, so this approach doesn't work.
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Minecraft_Collision.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Minecraft_CollisionX.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 I replaced grid marching with ray marching, stepping along the ray in small fixed increments and checking block occupancy at each step. The key adaptations for the spherical environment:
 

@@ -8,14 +8,14 @@ category: work
 related_publications: false
 ---
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/HE_9.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/HE_9X.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
     Naive Connectivity - each element has a pointer to all adjacent elements
-</div> -->
+</div>
 
 In this project, I created and displayed mesh objects using half-edges to represent data read from .obj files. I also included features such as edge splitting, triangulation, and Catmull-Clark subdivison.
 
@@ -29,11 +29,11 @@ private:
 };
 ```
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/HE_8.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/HE_8X.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 Half-edges are a useful way of representing mesh data, since they provide topoligical information such as adjacency and connectivity, in addition to geometric data. Say we want to traverse the edges of a face, in a VBO like data structure, this is not possible. A half edge data structures allows us connectivity.
 

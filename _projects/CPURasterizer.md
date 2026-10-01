@@ -15,11 +15,11 @@ Apply view & projection matrices to mesh to convert it into screen space.
 Loop through each triangle of the mesh and test pixel row intersections.
 Create a bounding box around each triangle to optimize row intersection tests.
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Raster1.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Raster1X.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 
 ## Barycentric Interpolation
@@ -28,11 +28,11 @@ Make sure to use persepctive-correct Baryentric interpolation in 3D, since
 the distance between vertices is no longer linear after perspective divide.
 We will not only be interpolating color values but also UV coordinates and normals for texturing and lighting.
 
-<!-- <div class="row">
+<div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Raster2_barycentric.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Raster2_barycentricX.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 ## Fragment Processing
 
