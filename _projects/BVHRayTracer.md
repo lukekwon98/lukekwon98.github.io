@@ -31,17 +31,17 @@ The key tradeoff vs. spatial partitioning: BVH bounding boxes can **overlap**, b
 
 The build is recursive. At each step:
 
-<!-- <div class="row justify-content-sm-center">
+<div class="row justify-content-sm-center">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/BVH1.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/BVH1X.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/BVH2.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/BVH2X.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/BVH3.png" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/BVH3X.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 1. Compute a bounding box that encloses all primitives in the current set.
 2. If the set is small enough, make a leaf node and store the primitive.
