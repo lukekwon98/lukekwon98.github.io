@@ -118,18 +118,18 @@ Because lighting now runs per *visible* pixel instead of per *rasterized* fragme
 </div>
 
 Environment maps are considered to be infinitely far away, so every fragment in the scene is assumed that it's placed exactly in the center of the map. This assumption simplifies light computation in various ways. As our shader model, we will be using the cook-torrance model that was implemented in Epic Games' Unreal 4 Engine, and is used as the general 'standard' PBR shader in contemporary real-time applications.
-<!-- 
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Cook-Torrance.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Cook-TorranceX.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/Cook-Torrance2.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/Cook-Torrance2X.png" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
     </div>
-</div> -->
+</div>
 
 ### Diffuse Convolution
 The main difference between light sources with finite areas such as point lights or area lights and environment maps is that for environment maps, lights come in from all directions.
