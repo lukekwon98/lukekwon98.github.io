@@ -13,7 +13,7 @@ Takes in multiple bounces unlike the ray tracer which snaps the intersection poi
 
 The entire algorithm is based on estimating the "Light Transport Equation".
 We discretely estimate this value via Monte Carlo since it is not possible to compute the integral of the equation on a computer.
-<div class="row">
+<!-- <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/PathTracer2_LTEImage.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
@@ -22,7 +22,7 @@ We discretely estimate this value via Monte Carlo since it is not possible to co
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/PathTracer1_LTE.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-</div>
+</div> -->
 
 Each term has the following meaning:
 
@@ -68,11 +68,11 @@ The result converges much faster than the naive method, as each pixel is snapped
 ## Direct MIS(Multiple Importance Sampling)
 Direct light sampling sturggles with glossy surfaces, and BSDF sampling struggles with small light sources. 
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/PathTracer6_BSDFvsDirect.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-</div>
+</div> -->
 
 Direct(small light) vs glossy surfaces: you pick a random point on the light, but a glossy surface only reflects light in a narrow cone. Most of the random points yous ample on the light will be outside of the cone, so the BSDF evalutes to nearly zero for all of them.
 
@@ -84,7 +84,7 @@ If you average them: (E_a + E_b) / 2
 The variance becomes (10,000 + 1) / 4 = 2,500. You divided by 4, but 2,500 is still terrible. The spike from estimator A is smaller but it's still there. You can't dilute away a massive spike by mixing it with a good estimate.
 
 MIS combines both strategies using the Power Hueristic, which weights each sample by the square of its pdf divided by the sum of square PDFs from both strategies.
-
+<!-- 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/PathTracer8_BalanceHeuristic.png" title="example image" class="img-fluid rounded z-depth-1" %}
@@ -94,7 +94,7 @@ MIS combines both strategies using the Power Hueristic, which weights each sampl
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/PathTracer9_BalanceResult.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-</div>
+</div> -->
 
 The problem is when pf(x) is tiny when the brdf value is large as this will produce a spike. This sum is small only if pf(x) is small AND pg(x) is small, both strategies think this sample is unlikely. This is rare.
 The sum is large if pf(x) is large OR pg(x) is large — either strategy thinks this sample is reasonable. That's common.
