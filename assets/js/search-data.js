@@ -424,7 +424,7 @@ ninja.data = [{
               window.location.href = "/projects/CPURasterizer/";
             },},{id: "projects-cuda-flocking",
           title: 'CUDA Flocking',
-          description: "CUDA, Boids, Parallel Progamming",
+          description: "CUDA, Boids, Parallel Programming",
           section: "Projects",handler: () => {
               window.location.href = "/projects/CUDABoids/";
             },},{id: "projects-optix-cuda-path-tracer",
