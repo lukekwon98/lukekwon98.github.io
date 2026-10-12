@@ -1,11 +1,28 @@
 ---
 layout: page
-title: Modeling
-description: "Simple 3D Modeling Projects <span style='display:block; margin-top:0.5em;'></span><b>Maya, Blender, Houdini, Substance Shader</b>"
-img: assets/img/MainRender2.jpg
+title: 3D Art & Technical Projects
+description: "Simple 3D Modeling Projects <span style='display:block; margin-top:0.5em;'></span><b>WebGL, Unity, Maya, Blender, Houdini</b>"
+img: assets/img/Comet.gif
 importance: 13
 category: work
 ---
+
+### WebGL Procedural Comet
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Comet.gif" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+
+[View Project](https://luke-kwon.com/hw01-fireball/)
+
+### Unity
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/Korbers.gif" title="G-Buffer layout" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
 
 ### Maya
 

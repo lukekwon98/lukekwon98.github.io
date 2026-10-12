@@ -6,6 +6,8 @@ img: assets/img/FKIK.png
 importance: 10
 category: work
 giscus_comments: false
+nav: false
+category: hidden
 ---
 
 More info coming soon...!

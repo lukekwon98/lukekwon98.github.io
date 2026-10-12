@@ -5,6 +5,8 @@ description: "Path Tracing, BRDFs, PDFs <span style='display:block; margin-top:0
 img: assets/img/PathTracerCover.png
 importance: 2
 category: work
+nav: false
+category: hidden
 ---
 
 ## Physically Based Rendering - Path Tracer

@@ -6,6 +6,8 @@ img: assets/img/GL_2.gif
 importance: 6
 category: work
 giscus_comments: false
+nav: false
+category: hidden
 ---
 
 For this project, I wrote multiple shaders in GLSL and constructed a polar spherical camera model to be able to navigate around the scene.
