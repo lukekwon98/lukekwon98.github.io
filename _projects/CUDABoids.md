@@ -1,11 +1,58 @@
 ---
 layout: page
 title: CUDA Flocking 
-description: CUDA, Boids, Parallel Progamming
+description: CUDA, Boids, Parallel Programming
 img: assets/img/Boids3.gif
 importance: 0
 category: work
 related_publications: false
+
+_styles: |
+  .post article {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .post article img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .post article table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+
+  .post article th,
+  .post article td {
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--global-divider-color, #d0d7de);
+    vertical-align: middle;
+    text-align: center !important;
+  }
+
+  .post article th {
+    font-weight: 600;
+    background: var(--global-code-bg-color, #f6f8fa);
+  }
+
+  .post article pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .post article h2 {
+    margin-top: 2.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--global-divider-color, #d0d7de);
+  }
+
+  .post article h3 {
+    margin-top: 2rem;
+  }
 ---
 
 * Luke (Hyuk Che) Kwon
