@@ -422,11 +422,16 @@ ninja.data = [{
           description: "Rasterization, Z-Buffering, Anti-Aliasing, Bresenham&#39;s Algorithm C++, GLM, QT",
           section: "Projects",handler: () => {
               window.location.href = "/projects/CPURasterizer/";
-            },},{id: "projects-curve-editor",
-          title: 'Curve Editor',
-          description: "De Casteljau, Catmull-Rom, Hermite",
+            },},{id: "projects-cuda-flocking",
+          title: 'CUDA Flocking',
+          description: "CUDA, Boids, Parallel Progamming",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/CurveEditor/";
+              window.location.href = "/projects/CUDABoids/";
+            },},{id: "projects-optix-cuda-path-tracer",
+          title: 'OptiX/CUDA Path Tracer',
+          description: "OptiX, CUDA, glTF, GGX, texture/normal mapping, environment lighting MIS, DOF",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/CUDAOptiXPathTracer/";
             },},{id: "projects-deferred-renderer-with-ssr",
           title: 'Deferred Renderer with SSR',
           description: "Deferred Rendering, Screen Space Reflections, OpenGL C++, OpenGL, Nsight Graphics",
@@ -442,9 +447,9 @@ ninja.data = [{
           description: "Half-Edges, Face Triangulation, Catmull-Clark Subdivision C++, OpenGL, QT",
           section: "Projects",handler: () => {
               window.location.href = "/projects/HalfEdgeMeshEditor/";
-            },},{id: "projects-modeling",
-          title: 'Modeling',
-          description: "Simple 3D Modeling Projects Maya, Blender, Houdini, Substance Shader",
+            },},{id: "projects-3d-art-amp-technical-projects",
+          title: '3D Art &amp;amp; Technical Projects',
+          description: "Simple 3D Modeling Projects WebGL, Unity, Maya, Blender, Houdini",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Modeling/";
             },},{id: "projects-monte-carlo-path-tracer",
