@@ -472,6 +472,11 @@ ninja.data = [{
           description: "Creating a simple scene with scene graphs C++, QT",
           section: "Projects",handler: () => {
               window.location.href = "/projects/SceneGraph/";
+            },},{id: "projects-webgpu-forward-clustered-deferred-renderer",
+          title: 'WebGPU Forward+ / Clustered Deferred renderer',
+          description: "WebGPU, Forward+, Clustered Deferred",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/WebGPUForwardPlusClusteredDeferred/";
             },},{
         id: 'social-linkedin',
         title: 'LinkedIn',
