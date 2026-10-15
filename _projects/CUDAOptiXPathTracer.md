@@ -3,7 +3,7 @@ layout: page
 title: OptiX/CUDA Path Tracer
 description: OptiX, CUDA, glTF, GGX, texture/normal mapping, environment lighting MIS, DOF
 img: https://github.com/user-attachments/assets/9b3ce840-2d83-4ab5-948b-c7c038f368a6
-importance: -1
+importance: -2
 category: work
 related_publications: false
 mermaid:
