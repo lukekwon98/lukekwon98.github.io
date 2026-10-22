@@ -16,7 +16,7 @@ mermaid:
 
 ### Live Demo
 
-Please check out the [Live Demo](https://lukekwon98.github.io/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred/) for smoother fps than the gif.
+Please check out the [Live Demo](https://lukekwon98.github.io/Project4-WebGPU-Forward-Plus-and-Clustered-Deferred/) for smoother fps than the gif (you can switch rendering modes via the dropdown menu on the top right).
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
